@@ -1,0 +1,30 @@
+<div class="customer-details">
+  <h4>Specific Customer Details</h4>
+  <div *ngIf="specificCustomer">
+    <p><strong>Customer ID:</strong> {{ specificCustomer._id }}</p>
+    <p><strong>Name:</strong> {{ specificCustomer.name }}</p>
+    <p><strong>Quotes:</strong></p>
+    <ul class="quotes-list">
+      <li *ngFor="let quote of specificCustomer.quotes">
+        <div class="quote-card">
+          <p><strong>Business Type:</strong> {{ quote.businessType }}</p>
+          <p><strong>Coverage Amount:</strong> {{ quote.coverageAmount | currency }}</p>
+          <p><strong>Status:</strong>
+            <span class="status-badge" [ngClass]="{
+              'status-pending': quote.quoteStatus === 'PENDING',
+              'status-approved': quote.quoteStatus === 'APPROVED',
+              'status-rejected': quote.quoteStatus === 'REJECTED'
+            }">
+              {{ quote.quoteStatus }}
+            </span>
+          </p>
+          <div *ngIf="quote.quoteStatus === 'PENDING'" class="quote-actions">
+            <button class="btn-approve" (click)="approveQuoteByAgent(quote._id)">Approve</button>
+            <button class="btn-reject" (click)="rejectQuoteByAgent(quote._id)">Reject</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <p *ngIf="!specificCustomer" class="no-customer">No customer details available.</p>
+</div>

@@ -1,0 +1,395 @@
+/* Base Styles */
+.admin-dashboard-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #333;
+  }
+  
+  h2, h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2.5rem;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  th {
+    background: #3498db;
+    color: white;
+    font-weight: 500;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Table Header Alignment */
+  th {
+    text-align: left; /* Ensure all headers are left-aligned by default */
+  }
+  
+  .action-header {
+    text-align: center; /* Center the "ACTION" header */
+  }
+  
+  /* Table Data Alignment */
+  td {
+    vertical-align: middle; /* Vertically align content in cells */
+  }
+  
+  .actions-cell {
+    text-align: center; /* Center the action buttons */
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center; /* Center the buttons within the container */
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Specific Button Colors */
+  button[ng-reflect-router-link] {
+    background: #3498db;
+    color: white;
+  }
+  
+  button[ng-reflect-router-link]:hover {
+    background: #2980b9;
+  }
+  
+  button:contains("Approve") {
+    background: #27ae60;
+    color: white;
+  }
+  
+  button:contains("Approve"):hover {
+    background: #219653;
+  }
+  
+  button:contains("Reject") {
+    background: #e74c3c;
+    color: white;
+  }
+  
+  button:contains("Reject"):hover {
+    background: #c0392b;
+  }
+  
+  button:contains("Edit") {
+    background: #f39c12;
+    color: white;
+  }
+  
+  button:contains("Edit"):hover {
+    background: #d35400;
+  }
+  
+  button:contains("Delete") {
+    background: #95a5a6;
+    color: white;
+  }
+  
+  button:contains("Delete"):hover {
+    background: #7f8c8d;
+  }
+  
+  button:contains("Authorize") {
+    background: #9b59b6;
+    color: white;
+  }
+  
+  button:contains("Authorize"):hover {
+    background: #8e44ad;
+  }
+  
+  button:contains("Save") {
+    background: #2ecc71;
+    color: white;
+  }
+  
+  button:contains("Save"):hover {
+    background: #27ae60;
+  }
+  
+  button:contains("Cancel") {
+    background: #95a5a6;
+    color: white;
+  }
+  
+  button:contains("Cancel"):hover {
+    background: #7f8c8d;
+  }
+  
+  button:contains("Close") { /* Style for the close button in the dialog */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  /* Form Styles */
+  form {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 1rem 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+  
+  small {
+    display: block;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+  }
+  
+  /* Edit Dialog (Popup) */
+  .edit-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  .edit-dialog h2 {
+    margin-top: 0;
+  }
+  
+  .edit-dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Overlay for dialog */
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  /* Authorize Section */
+  .authorize-section {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+  }
+  
+  .authorize-section label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .authorize-section select,
+  .authorize-section input {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  /* Customer Details Section */
+  .customer-details {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+  }
+  
+  .customer-details p {
+    margin: 0.5rem 0;
+  }
+  
+  .customer-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .customer-details li {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .edit-dialog {
+      width: 95%;
+      padding: 1rem;
+    }
+  
+    .authorize-section label {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .authorize-section select,
+    .authorize-section input {
+      max-width: 100%;
+    }
+  
+    .action-buttons {
+      flex-direction: column; /* Stack buttons on smaller screens */
+      align-items: stretch; /* Make buttons take full width */
+    }
+  
+    .action-buttons button {
+      margin-bottom: 0.5rem;
+      margin-right: 0; /* Remove right margin when stacked */
+    }
+  }
+  
+  /* Status Badges */
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .status-pending {
+    color: #FFC107;
+    background-color: rgba(255, 193, 7, 0.2);
+  }
+  
+  .status-approved {
+    color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+  
+  .status-rejected {
+    color: #F44336;
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+  
+  /* Button Colors */
+  .btn-approve {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-reject {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #FFC107;
+    color: #333;
+  }
+  
+  .btn-delete {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .btn-authorize {
+    background-color: #9C27B0;
+    color: white;
+  }
+  
+  .btn-save {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-cancel {
+    background-color: #9E9E9E;
+    color: white;
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }

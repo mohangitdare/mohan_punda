@@ -1,0 +1,89 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+  }
+ 
+  .auth-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+  }
+ 
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+ 
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+ 
+  .tab-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+  }
+ 
+  .tab-buttons .active {
+    background-color: #2196f3;
+    color: white;
+    font-weight: bold;
+  }
+ 
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+ 
+  .input-group i {
+    margin-right: 8px;
+    color: gray;
+  }
+ 
+  .input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+ 
+  .options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+ 
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+  }
+ 
+  .login-btn {
+    background-color: #2196f3;
+    color: white;
+  }
+ 
+  .register-btn {
+    background-color: #4CAF50;
+    color: white;
+  }

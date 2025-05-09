@@ -1,0 +1,306 @@
+
+  <!-- <div *ngIf="loggedIn && currentCustomerId">
+    
+      <h2>Submit Quot Request</h2>
+      <form (submit)="requestQuote(); $event.preventDefault()">
+        <input type="text" placeholder="Business Type" [(ngModel)]="newQuote.businessType" name="businessType" required />
+        <input type="text" placeholder="Business Size" [(ngModel)]="newQuote.businessSize" name="businessSize" required />
+        <input type="text" placeholder="Coverage Requirements" [(ngModel)]="newQuote.coverageRequirements" name="coverageRequirements" required />
+        <input type="text" placeholder="Location" [(ngModel)]="newQuote.location" name="location" required />
+        <input type="text" placeholder="Other Risk Factors" [(ngModel)]="newQuote.otherRiskFactors" name="otherRiskFactors" />
+        <input type="number" placeholder="Coverage Amount" [(ngModel)]="newQuote.coverageAmount" name="coverageAmount" required />
+        <button type="submit">Submit Quote Request</button>
+      </form>
+   
+      <h2>Your Quote Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Business Type</th>
+            <th>Business Size</th>
+            <th>Coverage Requirements</th>
+            <th>Location</th>
+            <th>Other Risk Factors</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of customerQuotes">
+            <td>{{ quote.businessType }}</td>
+            <td>{{ quote.businessSize }}</td>
+            <td>{{ quote.coverageRequirements }}</td>
+            <td>{{ quote.location }}</td>
+            <td>{{ quote.otherRiskFactors }}</td>
+            <td>{{ quote.coverageAmount }}</td>
+            <td>{{ quote.quoteStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+
+
+    <!-- customer.component.html -->
+<!-- <div *ngIf="loggedIn && currentCustomerId" class="customer-dashboard">
+
+  <h2>Welcome, {{ customerName }}</h2>
+  <div class="layout-container">
+   
+    <div class="form-section">
+      <h2>Submit Quote Request</h2>
+      <form (submit)="requestQuote(); $event.preventDefault()" class="quote-form">
+        <input type="text" placeholder="Business Type" [(ngModel)]="newQuote.businessType" name="businessType" required>
+        <input type="text" placeholder="Business Size" [(ngModel)]="newQuote.businessSize" name="businessSize" required>
+        <input type="text" placeholder="Coverage Requirements" [(ngModel)]="newQuote.coverageRequirements" name="coverageRequirements" required>
+        <input type="text" placeholder="Location" [(ngModel)]="newQuote.location" name="location" required>
+        <input type="text" placeholder="Other Risk Factors" [(ngModel)]="newQuote.otherRiskFactors" name="otherRiskFactors">
+        <input type="number" placeholder="Coverage Amount" [(ngModel)]="newQuote.coverageAmount" name="coverageAmount" required>
+        <button type="submit" class="submit-btn">Submit Quote Request</button>
+      </form>
+    </div>
+
+    
+    <div class="table-section">
+      <h2>Your Quote Requests</h2>
+      <table class="quotes-table">
+        <thead>
+          <tr>
+            <th>Business Type</th>
+            <th>Business Size</th>
+            <th>Coverage Requirements</th>
+            <th>Location</th>
+            <th>Other Risk Factors</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of customerQuotes" class="quote-row">
+            <td>{{ quote.businessType }}</td>
+            <td>{{ quote.businessSize }}</td>
+            <td>{{ quote.coverageRequirements }}</td>
+            <td>{{ quote.location }}</td>
+            <td>{{ quote.otherRiskFactors || '-' }}</td>
+            <td>${{ quote.coverageAmount | number }}</td>
+            <td [class]="'status-' + quote.quoteStatus?.toLowerCase()">
+              {{ quote.quoteStatus }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div class="stats-container">
+    <div class="stat-card total-quotes">
+      <h3>Total Quotes</h3>
+      <p>{{totalQuotes}}</p>
+    </div>
+    <div class="stat-card accepted-quotes">
+      <h3>Approved Quotes</h3>
+      <p>{{ approvedQuotes }}</p>
+    </div>
+    <div class="stat-card rejected-quotes">
+      <h3>Rejected Quotes</h3>
+      <p>{{ rejectedQuotes }}</p>
+    </div>
+  </div>
+</div> crtt -->
+
+
+
+<!-- <div *ngIf="loggedIn && currentCustomerId" class="customer-dashboard">
+  <h2>Welcome, {{ customerName }}</h2>
+  
+  <div class="form-image-container">
+    
+    <div class="form-section">
+      <h3>Submit Quote Request</h3>
+      <form (submit)="requestQuote(); $event.preventDefault()" class="quote-form">
+        <div class="form-group">
+          <label for="businessType">Business Type</label>
+          <input type="text" id="businessType" [(ngModel)]="newQuote.businessType" name="businessType" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="businessSize">Business Size</label>
+          <input type="text" id="businessSize" [(ngModel)]="newQuote.businessSize" name="businessSize" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="coverageRequirements">Coverage Requirements</label>
+          <input type="text" id="coverageRequirements" [(ngModel)]="newQuote.coverageRequirements" name="coverageRequirements" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" [(ngModel)]="newQuote.location" name="location" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="otherRiskFactors">Other Risk Factors</label>
+          <input type="text" id="otherRiskFactors" [(ngModel)]="newQuote.otherRiskFactors" name="otherRiskFactors">
+        </div>
+        
+        <div class="form-group">
+          <label for="coverageAmount">Coverage Amount</label>
+          <input type="number" id="coverageAmount" [(ngModel)]="newQuote.coverageAmount" name="coverageAmount" required>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Quote Request</button>
+      </form>
+    </div>
+
+    
+    <div class="image-section">
+      <img src="assets/images/products/product-1.png" alt="Insurance Quote Illustration" class="form-image">
+    </div>
+  </div>
+
+  
+  <div class="table-section">
+    <h3>Your Quote Requests</h3>
+    <div class="table-responsive">
+      <table class="quotes-table">
+        <thead>
+          <tr>
+            <th>Business Type</th>
+            <th>Business Size</th>
+            <th>Coverage Requirements</th>
+            <th>Location</th>
+            <th>Other Risk Factors</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of customerQuotes" class="quote-row">
+            <td>{{ quote.businessType }}</td>
+            <td>{{ quote.businessSize }}</td>
+            <td>{{ quote.coverageRequirements }}</td>
+            <td>{{ quote.location }}</td>
+            <td>{{ quote.otherRiskFactors || '-' }}</td>
+            <td>${{ quote.coverageAmount | number }}</td>
+            <td [class]="'status-' + quote.quoteStatus?.toLowerCase()">
+              {{ quote.quoteStatus }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-card total-quotes">
+        <h3>Total Quotes</h3>
+        <p>{{totalQuotes}}</p>
+      </div>
+      <div class="stat-card accepted-quotes">
+        <h3>Approved Quotes</h3>
+        <p>{{ approvedQuotes }}</p>
+      </div>
+      <div class="stat-card rejected-quotes">
+        <h3>Rejected Quotes</h3>
+        <p>{{ rejectedQuotes }}</p>
+      </div>
+    </div>
+  </div>  perfect-->
+
+
+
+  <div *ngIf="loggedIn && currentCustomerId" class="customer-dashboard">
+    <h2>Welcome, {{ customerName }}</h2>
+    
+    <div class="form-image-container">
+      <!-- Form Section -->
+      <div class="form-section">
+        <h3>Submit Quote Request</h3>
+        <form (submit)="requestQuote(); $event.preventDefault()" class="quote-form">
+          <div class="form-group">
+            <label for="businessType">Business Type</label>
+            <input type="text" id="businessType" [(ngModel)]="newQuote.businessType" name="businessType" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="businessSize">Business Size</label>
+            <input type="text" id="businessSize" [(ngModel)]="newQuote.businessSize" name="businessSize" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="coverageRequirements">Coverage Requirements</label>
+            <input type="text" id="coverageRequirements" [(ngModel)]="newQuote.coverageRequirements" name="coverageRequirements" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" [(ngModel)]="newQuote.location" name="location" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="otherRiskFactors">Other Risk Factors</label>
+            <input type="text" id="otherRiskFactors" [(ngModel)]="newQuote.otherRiskFactors" name="otherRiskFactors">
+          </div>
+          
+          <div class="form-group">
+            <label for="coverageAmount">Coverage Amount</label>
+            <input type="number" id="coverageAmount" [(ngModel)]="newQuote.coverageAmount" name="coverageAmount" required>
+          </div>
+          
+          <button type="submit" class="submit-btn">Submit Quote Request</button>
+        </form>
+      </div>
+  
+      <!-- Image Section -->
+      <div class="image-section">
+        <img src="assets/images/products/cust.png" alt="Insurance Quote Illustration" class="form-image">
+      </div>
+    </div>
+  
+    <!-- Quote Cards Section -->
+    <div class="quote-cards-container">
+      <div class="quote-card" *ngFor="let quote of customerQuotes">
+        <div class="quote-header">
+          <h4>{{ quote.businessType }}</h4>
+          <span class="status-badge" [class]="'status-' + quote.quoteStatus?.toLowerCase()">
+            {{ quote.quoteStatus }}
+          </span>
+        </div>
+        <div class="quote-details">
+          <div class="detail-item">
+            <span class="detail-label">Business Size:</span>
+            <span>{{ quote.businessSize }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Coverage:</span>
+            <span>{{ quote.coverageRequirements }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Location:</span>
+            <span>{{ quote.location }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Amount:</span>
+            <span>${{ quote.coverageAmount | number }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Stats Cards -->
+    
+    <div class="stats-container">
+      <div class="stat-card total-quotes">
+        <h3>Total Quotes</h3>
+        <p>{{totalQuotes}}</p>
+      </div>
+      <div class="stat-card accepted-quotes">
+        <h3>Approved Quotes</h3>
+        <p>{{ approvedQuotes }}</p>
+      </div>
+      <div class="stat-card rejected-quotes">
+        <h3>Rejected Quotes</h3>
+        <p>{{ rejectedQuotes }}</p>
+      </div>
+    </div>
+  </div>

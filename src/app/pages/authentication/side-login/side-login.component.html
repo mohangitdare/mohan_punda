@@ -1,0 +1,204 @@
+<!-- <div class="container">
+  <h1>Customer Management</h1> -->
+ 
+  <!-- Add New Customer Form -->
+  <!-- <div>
+    <h2>Add New Customer</h2>
+    <form (submit)="addCustomer(); $event.preventDefault()">
+      <input
+        type="text"
+        placeholder="Enter customer name"
+        [(ngModel)]="newCustomer.name"
+        name="customerName"
+        required
+      />
+      <button type="submit">Add Customer</button>
+    </form>
+  </div> -->
+ 
+  <!-- Switch Customer Dropdown -->
+  <!-- <div>
+    <h2>Switch Customer</h2>
+    <select [(ngModel)]="currentCustomerId" (change)="loadCustomerQuotes()">
+      <option value="" disabled>Select a customer</option>
+      <option *ngFor="let customer of customers" [value]="customer._id">
+        {{ customer.name }}
+      </option>
+    </select>
+  </div> -->
+ 
+  <!-- Registration Form -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <span class="close-btn">&times;</span>
+   
+      <div class="tab-buttons">
+        <button (click)="isLogin = true" [class.active]="isLogin">Login</button>
+        <button (click)="isLogin = false" [class.active]="!isLogin">Register</button>
+      </div>
+   
+      <form *ngIf="isLogin" (ngSubmit)="login()">
+        <div class="input-group">
+          <i class="icon">person</i>
+          <input type="email" placeholder="Email" [(ngModel)]="loginData.email" name="email" required />
+        </div>
+   
+        <div class="input-group">
+          <i class="icon">password</i>
+          <input type="password" placeholder="Password" [(ngModel)]="loginData.password" name="password" required />
+        </div>
+   
+        <!-- <div class="options">
+          <label><input type="checkbox" /> Remember me</label>
+        </div> -->
+   
+        <button type="submit" class="btn login-btn">LOGIN</button>
+      </form>
+   
+      <form *ngIf="!isLogin" (ngSubmit)="register()">
+        <div class="input-group">
+          <i class="icon">Name</i>
+          <input type="text" placeholder="Full Name" [(ngModel)]="registerData.name" name="name" required />
+        </div>
+   
+        <div class="input-group">
+          <i class="icon">email</i>
+          <input type="email" placeholder="Email" [(ngModel)]="registerData.email" name="registerEmail" required />
+        </div>
+   
+        <div class="input-group">
+          <i class="icon">password</i>
+          <input type="password" placeholder="Password" [(ngModel)]="registerData.password" name="registerPassword" required />
+        </div>
+   
+        <button type="submit" class="btn register-btn">REGISTER</button>
+      </form>
+    </div>
+  </div>
+   
+   
+    <!-- Your Quote Requests -->
+    <!-- <div>
+      <h2>Your Quote Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Business Type</th>
+            <th>Business Size</th>
+            <th>Coverage Requirements</th>
+            <th>Location</th>
+            <th>Other Risk Factors</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of customerQuotes">
+            <td>{{ quote.businessType }}</td>
+            <td>{{ quote.businessSize }}</td>
+            <td>{{ quote.coverageRequirements }}</td>
+            <td>{{ quote.location }}</td>
+            <td>{{ quote.otherRiskFactors }}</td>
+            <td>{{ quote.coverageAmount }}</td>
+            <td>{{ quote.quoteStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+   
+    <!-- Submit Quote Request Form -->
+    <!-- <div>
+      <h2>Submit Quote Request</h2>
+      <form (submit)="requestQuote(); $event.preventDefault()">
+        <input
+          type="text"
+          placeholder="Business Type"
+          [(ngModel)]="newQuote.businessType"
+          name="businessType"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Business Size"
+          [(ngModel)]="newQuote.businessSize"
+          name="businessSize"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Coverage Requirements"
+          [(ngModel)]="newQuote.coverageRequirements"
+          name="coverageRequirements"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Location"
+          [(ngModel)]="newQuote.location"
+          name="location"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Other Risk Factors"
+          [(ngModel)]="newQuote.otherRiskFactors"
+          name="otherRiskFactors"
+        />
+        <input
+          type="number"
+          placeholder="Coverage Amount"
+          [(ngModel)]="newQuote.coverageAmount"
+          name="coverageAmount"
+          required
+        />
+        <button type="submit">Submit Quote Request</button>
+      </form>
+    </div> -->
+  <!-- </div> -->
+   
+   
+  <!-- Show only if logged in -->
+  <!-- <div *ngIf="loggedIn"> -->
+    <!-- Your Quote Requests -->
+     
+     <!-- Submit Quote Request Form -->
+   
+    <!-- <div *ngIf="loggedIn && currentCustomerId">
+    
+      <h2>Submit Quote Request</h2>
+      <form (submit)="requestQuote(); $event.preventDefault()">
+        <input type="text" placeholder="Business Type" [(ngModel)]="newQuote.businessType" name="businessType" required />
+        <input type="text" placeholder="Business Size" [(ngModel)]="newQuote.businessSize" name="businessSize" required />
+        <input type="text" placeholder="Coverage Requirements" [(ngModel)]="newQuote.coverageRequirements" name="coverageRequirements" required />
+        <input type="text" placeholder="Location" [(ngModel)]="newQuote.location" name="location" required />
+        <input type="text" placeholder="Other Risk Factors" [(ngModel)]="newQuote.otherRiskFactors" name="otherRiskFactors" />
+        <input type="number" placeholder="Coverage Amount" [(ngModel)]="newQuote.coverageAmount" name="coverageAmount" required />
+        <button type="submit">Submit Quote Request</button>
+      </form>
+   
+      <h2>Your Quote Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Business Type</th>
+            <th>Business Size</th>
+            <th>Coverage Requirements</th>
+            <th>Location</th>
+            <th>Other Risk Factors</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of customerQuotes">
+            <td>{{ quote.businessType }}</td>
+            <td>{{ quote.businessSize }}</td>
+            <td>{{ quote.coverageRequirements }}</td>
+            <td>{{ quote.location }}</td>
+            <td>{{ quote.otherRiskFactors }}</td>
+            <td>{{ quote.coverageAmount }}</td>
+            <td>{{ quote.quoteStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->

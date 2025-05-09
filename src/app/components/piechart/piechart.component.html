@@ -1,0 +1,49 @@
+<mat-card class="cardWithShadow overflow-hidden">
+    <mat-card-content class="p-b-0">
+        <div class="d-flex align-items-center m-b-8">
+            <mat-card-title>Overall Quote Statistics</mat-card-title>
+        </div>
+        <h4 class="f-s-24 m-b-6">{{ totalQuotes }} Total Quotes</h4>
+        
+    </mat-card-content>
+    <apx-chart
+        [series]="yearlyBreakupChart.series"
+        [chart]="yearlyBreakupChart.chart"
+        [labels]="yearlyBreakupChart.labels"
+        [responsive]="yearlyBreakupChart.responsive"
+        [dataLabels]="yearlyBreakupChart.dataLabels"
+        [legend]="yearlyBreakupChart.legend"
+        [colors]="yearlyBreakupChart.colors"
+        [fill]="yearlyBreakupChart.fill"
+    ></apx-chart>
+    <mat-card-content class="p-t-0">
+        <div class="d-flex align-items-center justify-content-around">
+            <div class="d-flex align-items-center">
+                <div class="bullet" style="background-color: #5D87FF;"></div>
+                <div class="m-l-8">Total</div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="bullet" style="background-color: #28B781;"></div>
+                <div class="m-l-8">Accepted</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-around m-t-8">
+            <div class="d-flex align-items-center">
+                <div class="bullet" style="background-color: #E46A76;"></div>
+                <div class="m-l-8">Rejected</div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="bullet" style="background-color: #FFB22E;"></div>
+                <div class="m-l-8">Pending</div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<style>
+    .bullet {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+</style>

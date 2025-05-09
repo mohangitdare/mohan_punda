@@ -1,0 +1,38 @@
+<mat-card class="cardWithShadow">
+    <mat-card-content>
+        <div class="d-flex w-100">
+            <mat-card-title>Customer Quote Statistics</mat-card-title>
+            <div class="m-l-auto">
+                <mat-form-field class="theme-select" appearance="outline">
+                    <mat-select [value]="selectedMonth" (selectionChange)="onMonthChange($event)">
+                        @for(month of months; track month.viewValue ) {
+                        <mat-option [value]="month.value">
+                            {{ month.viewValue }}
+                        </mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        @if (isLoading) {
+        <div class="loading-spinner">
+            <mat-spinner diameter="40"></mat-spinner>
+            <p>Loading customer data...</p>
+        </div>
+        } @else {
+        <apx-chart
+            [series]="customerQuoteChart.series"
+            [dataLabels]="customerQuoteChart.dataLabels"
+            [chart]="customerQuoteChart.chart"
+            [legend]="customerQuoteChart.legend"
+            [xaxis]="customerQuoteChart.xaxis"
+            [yaxis]="customerQuoteChart.yaxis"
+            [grid]="customerQuoteChart.grid"
+            [stroke]="customerQuoteChart.stroke"
+            [tooltip]="customerQuoteChart.tooltip"
+            [plotOptions]="customerQuoteChart.plotOptions"
+        ></apx-chart>
+        }
+    </mat-card-content>
+</mat-card>
